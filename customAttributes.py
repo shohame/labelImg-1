@@ -431,7 +431,7 @@ class AttributesManager( AbstractAttributesWidgets ):
         #    }
 
         #g_defs.append( ( "Filters", "filters", filters, 2 ) )
-
+        return {}
         return g_defs
 
 
@@ -439,6 +439,7 @@ class AttributesManager( AbstractAttributesWidgets ):
 
     # same action in all cases from AttributesWidgets
     def get_image_attribute_definitions( self ):
+        return {}
         return {
             "untruth": {
                 "order": self.next_index(),
@@ -501,63 +502,39 @@ class AttributesManager( AbstractAttributesWidgets ):
     # same action in all cases from AttributesWidgets
     def get_label_attribute_definitions( self ):
         return {
-            "aspect": {
+            "attr_1": {
                 "order": self.next_index(),
-                "tooltip": "How is the object oriented with respect to it's face",
-                "default": "back",
-                "type": "combo",
-                "choices": [
-                    "front",
-                    "back",
-                    "rear",
-                    "left",
-                    "right",
-                    "top",
-                    "bottom",
-                    "front left",
-                    "front right",
-                    "rear left",
-                    "rear right"
-                ],
+                "tooltip": "...",
+                "type": "checkbox",
+                "default": "no",
                 "action": self.update_label_attributes
             },
-            "quality": {
+            "attr_2": {
                 "order": self.next_index(),
-                "tooltip": "What span of the the category's features does this object exhibit",
-                "default": "ok",
-                "type": "combo",
-                "choices": [
-                    "bad",
-                    "poor",
-                    "ok",
-                    "good",
-                    "excellent"
-                ],
+                "tooltip": "...",
+                "type": "checkbox",
+                "default": "no" ,
                 "action": self.update_label_attributes
             },
-            "cardinality": {
+            "attr_3": {
                 "order": self.next_index(),
-                "tooltip": "How much of a stereotype, or archetype, of the category does this object represent: 1 - a little, 5 - a lot",
-                "type": "text",
+                "tooltip": "...",
+                "type": "checkbox",
+                "default": "no" ,
                 "action": self.update_label_attributes
             },
-            "box-score": {
+            "attr_4": {
                 "order": self.next_index(),
-                "default": "",
-                "type": "text",
-                "action": self.update_image_attributes
+                "tooltip": ".....",
+                "type": "checkbox",
+                "default": "no" ,
+                "action": self.update_label_attributes
             },
-            "class-error": {
+            "attr_5": {
                 "order": self.next_index(),
-                "default": "",
-                "type": "text",
-                "action": self.update_image_attributes
+                "tooltip": "...",
+                "type": "checkbox",
+                "default": "no" ,
+                "action": self.update_label_attributes
             },
-            "class-error-score": {
-                "order": self.next_index(),
-                "default": "",
-                "type": "text",
-                "action": self.update_image_attributes
-            }
-
         }
